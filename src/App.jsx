@@ -50,7 +50,7 @@ export default function HabitTracker() {
     <div className="p-5 min-h-screen flex justify-center items-center flex-col text-center">
       {/* Asosiy konteyner — hamma narsa markazda */}
 
-      <h1 className="text-2xl font-bold mb-3">Odat Kuzatuvchi</h1>
+      <h1 className="text-2xl font-bold mb-3">Habit Tracker</h1>
 
       <input
         className="border p-2 mr-2"
