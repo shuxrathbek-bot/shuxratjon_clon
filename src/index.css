@@ -1,88 +1,110 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+border-radius: 10px;
+border: none;
+outline: none;
+background: rgba(255, 255, 255, 0.3);
+color: #fff;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+.input::placeholder {
+color: #e5e5e5;
 }
 
-button {
-  border-radius: 8px;
-  position: relative;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: darkseagreen;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  left: 5px;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.btn {
+padding: 10px 15px;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+font-weight: 600;
+transition: 0.2s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: darkslategray;
-    color: aqua;
-  }
+
+.btn.add {
+background: #2563eb;
+color: #fff;
 }
 
-body {
-  background-color: darkseagreen;
+
+.btn.add:hover {
+background: #1d4ed8;
 }
 
-* {
-  justify-content: center;
-  align-items: center;
+
+.habit-list {
+list-style: none;
+padding: 0;
+margin: 0;
+margin-top: 10px;
 }
-span {
-  margin: 5;
-  padding: 5;
+
+
+.habit-card {
+background: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(10px);
+padding: 15px;
+margin-bottom: 12px;
+border-radius: 15px;
+display: flex;
+flex-direction: column;
+gap: 8px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
-input{
-  background-color: darkslategrey;
-  color: aqua;
+
+
+.habit-name {
+font-size: 18px;
+font-weight: 700;
+}
+
+
+.habit-count {
+font-size: 14px;
+opacity: 0.8;
+}
+
+
+.btn-group {
+display: flex;
+gap: 10px;
+}
+
+
+.btn.done {
+background: #16a34a;
+color: #fff;
+}
+
+
+.btn.done:hover {
+background: #15803d;
+}
+
+
+.btn.delete {
+background: #dc2626;
+color: #fff;
+}
+
+
+.btn.delete:hover {
+background: #b91c1c;
+}
+
+
+@media (max-width: 480px) {
+.container {
+padding: 20px;
+}
+.title {
+font-size: 24px;
+}
+.input-wrapper {
+flex-direction: column;
+}
+.btn.add {
+width: 100%;
+}
 }
