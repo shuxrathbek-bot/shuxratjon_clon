@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevCode - Nematov Suhxratjon | Dasturchilar Jamoasi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo h1 {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+        }
+
+        .author {
+            color: #666;
+            font-size: 1.1rem;
+            margin-left: 65px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 20px 20px 0 0;
+            padding: 3rem 0;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .language-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .language-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .language-card.python {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+        }
+
+        .language-card.javascript {
+            background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+        }
+
+        .language-card.java {
+            background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
+            color: white;
+        }
+
+        .language-card.cpp {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: white;
+        }
+
+        .language-card.web {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .language-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+        }
+
+        .blog-section {
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-content h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .blog-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .read-more:hover {
+            transform: scale(1.05);
+        }
+
+        .features {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .languages-grid,
+            .blog-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">DC</div>
+                <div>
+                    <h1>DevCode</h1>
+                    <p class="author">by Nematov Suhxratjon</p>
+                </div>
+            </div>
+            <nav>
+                <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer">Bosh sahifa</a>
+                <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer">Dasturlash Tillari</a>
+                <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer">Resurslar</a>
+                <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer">Jamoa</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>🚀 Dasturchilar Jamoasiga Xush Kelibsiz!</h2>
+            <p>Birgalikda o'rganamiz, rivojlanamiz va yaratamiz</p>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <section id="languages">
+                <h2 class="section-title">💻 Dasturlash Tillari</h2>
+                <div class="languages-grid">
+                    <div class="language-card python">
+                        <h3><span class="icon">🐍</span> Python</h3>
+                        <p>Data Science, AI, Web Development va avtomatlashtirish uchun eng mashhur til. O'rganish oson va kuchli imkoniyatlar.</p>
+                        <ul style="margin-top: 1rem; list-style-position: inside;">
+                            <li>Django & Flask</li>
+                            <li>Machine Learning</li>
+                            <li>Automation</li>
+                        </ul>
+                    </div>
+
+                    <div class="language-card javascript">
+                        <h3><span class="icon">⚡</span> JavaScript</h3>
+                        <p>Web dasturlashning negizi. Frontend va Backend uchun universal til. Node.js bilan har qanday loyiha.</p>
+                        <ul style="margin-top: 1rem; list-style-position: inside;">
+                            <li>React, Vue, Angular</li>
+                            <li>Node.js & Express</li>
+                            <li>Full Stack Development</li>
+                        </ul>
+                    </div>
+
+                    <div class="language-card java">
+                        <h3><span class="icon">☕</span> Java</h3>
+                        <p>Korporativ dasturlar, Android ilovalar va katta tizimlar uchun ishonchli til. Platform-mustaqil.</p>
+                        <ul style="margin-top: 1rem; list-style-position: inside;">
+                            <li>Spring Framework</li>
+                            <li>Android Development</li>
+                            <li>Enterprise Applications</li>
+                        </ul>
+                    </div>
+
+                    <div class="language-card cpp">
+                        <h3><span class="icon">⚙️</span> C++ / C#</h3>
+                        <p>Tezkor dasturlar, o'yinlar va tizim dasturlash uchun. C# - .NET va Unity uchun mukammal tanlov.</p>
+                        <ul style="margin-top: 1rem; list-style-position: inside;">
+                            <li>Game Development (Unity)</li>
+                            <li>System Programming</li>
+                            <li>.NET Applications</li>
+                        </ul>
+                    </div>
+
+                    <div class="language-card web">
+                        <h3><span class="icon">🌐</span> Web Development</h3>
+                        <p>HTML, CSS, React, Node.js - zamonaviy veb-ilovalar yaratish uchun to'liq stack.</p>
+                        <ul style="margin-top: 1rem; list-style-position: inside;">
+                            <li>Responsive Design</li>
+                            <li>Modern Frameworks</li>
+                            <li>API Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="blog" class="blog-section">
+                <h2 class="section-title">📝 So'nggi Maqolalar</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">🐍</div>
+                        <div class="blog-content">
+                            <h4>Python bilan boshlash</h4>
+                            <p>Python dasturlash tilini 0 dan o'rganish uchun to'liq yo'llanma. Asosiy sintaksis va muhim tushunchalar.</p>
+                            <div class="blog-meta">
+                                <span>📅 12 Fevral 2026</span>
+                                <span>👁️ 1.2k ko'rishlar</span>
+                            </div>
+                            <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer" class="read-more">Batafsil o'qish →</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">⚛️</div>
+                        <div class="blog-content">
+                            <h4>React.js asoslari</h4>
+                            <p>Zamonaviy veb-ilovalar yaratish uchun React.js kutubxonasini o'rganamiz. Komponentlar va state boshqaruvi.</p>
+                            <div class="blog-meta">
+                                <span>📅 10 Fevral 2026</span>
+                                <span>👁️ 856 ko'rishlar</span>
+                            </div>
+                            <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer" class="read-more">Batafsil o'qish →</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">🚀</div>
+                        <div class="blog-content">
+                            <h4>Backend Development</h4>
+                            <p>Node.js va Express bilan server yaratish. RESTful API, ma'lumotlar bazasi va authentication.</p>
+                            <div class="blog-meta">
+                                <span>📅 8 Fevral 2026</span>
+                                <span>👁️ 652 ko'rishlar</span>
+                            </div>
+                            <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer" class="read-more">Batafsil o'qish →</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">💡</div>
+                        <div class="blog-content">
+                            <h4>Algorithm va Data Structures</h4>
+                            <p>Dasturlashda eng muhim mavzular: algoritmlar va ma'lumotlar tuzilmasi. Intervyu tayyorligi.</p>
+                            <div class="blog-meta">
+                                <span>📅 5 Fevral 2026</span>
+                                <span>👁️ 1.5k ko'rishlar</span>
+                            </div>
+                            <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer" class="read-more">Batafsil o'qish →</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">🎮</div>
+                        <div class="blog-content">
+                            <h4>Unity bilan o'yin yaratish</h4>
+                            <p>C# va Unity yordamida 2D va 3D o'yinlar yaratish. Boshlang'ich qo'llanma va maslahatlar.</p>
+                            <div class="blog-meta">
+                                <span>📅 3 Fevral 2026</span>
+                                <span>👁️ 923 ko'rishlar</span>
+                            </div>
+                            <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer" class="read-more">Batafsil o'qish →</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">🤖</div>
+                        <div class="blog-content">
+                            <h4>Machine Learning kirish</h4>
+                            <p>Python bilan sun'iy intellekt va mashinani o'rgatish asoslari. TensorFlow va scikit-learn.</p>
+                            <div class="blog-meta">
+                                <span>📅 1 Fevral 2026</span>
+                                <span>👁️ 1.8k ko'rishlar</span>
+                            </div>
+                            <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer" class="read-more">Batafsil o'qish →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <h2 class="section-title">✨ Nima uchun bizni tanlash kerak?</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">📚</div>
+                        <h3>Bepul Ta'lim</h3>
+                        <p>Barcha darslar va maqolalar to'liq bepul va ochiq</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <h3>Faol Jamoa</h3>
+                        <p>Yordamlasuv va tajriba almashish uchun jamoa</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Amaliy Loyihalar</h3>
+                        <p>Real dunyo uchun foydali loyihalar yaratamiz</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Doimiy Yangilanish</h3>
+                        <p>Har hafta yangi darslar va maqolalar</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 DevCode - Nematov Suhxratjon | Barcha huquqlar himoyalangan</p>
+            <p style="margin-top: 1rem;">
+                <a href="#">GitHub</a> | 
+                <a href="https://t.me/DasturchijamoproBot" target="_blank" rel="noopener noreferrer">Telegram Bot</a> | 
+                <a href="https://t.me/hamesterProbot" target="_blank" rel="noopener noreferrer">Telegram Kanal</a> | 
+                <a href="#">Instagram</a> | 
+                <a href="#">YouTube</a>
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.8;">
+                💻 Dasturlash - kelajak kasbi | 🚀 Birgalikda o'rganamiz
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.language-card, .blog-card, .feature-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s, transform 0.6s';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
