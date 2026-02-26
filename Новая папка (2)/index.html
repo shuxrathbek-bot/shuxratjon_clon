@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto24 - Mashina sotish, xarid qilish va 24/7 texnik xizmat</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1D4ED8', /* Ko'k rang */
+                        secondary: '#0F172A', /* To'q ko'k/qora */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 selection:bg-primary selection:text-white antialiased">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="text-3xl font-extrabold text-primary">Auto<span class="text-gray-900">24</span></span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-primary font-medium transition">Asosiy</a>
+                    <a href="#buy" class="text-gray-600 hover:text-primary font-medium transition">Sotib olish</a>
+                    <a href="#sell" class="text-gray-600 hover:text-primary font-medium transition">Sotish</a>
+                    <a href="#service" class="text-gray-600 hover:text-primary font-medium transition">Texnik xizmat</a>
+                </div>
+                
+                <div class="hidden md:flex">
+                    <button class="bg-primary hover:bg-blue-800 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg hover:shadow-xl">
+                        Bog'lanish
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative bg-secondary overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-secondary to-gray-900 opacity-90"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                Avtomobilingizni biz bilan <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">oson soting yoki xarid qiling</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-lg md:text-xl text-gray-300 font-light mb-10">
+                Auto24 — O'zbekistondagi eng ishonchli avtomobil bozori. Mashinangizni tezda soting, orzuingizdagisini toping va 24/7 sifatli texnik yordamdan bahramand bo'ling.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                <a href="#buy" class="bg-primary hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-lg hover:shadow-primary/50">
+                    Mashina qidirish
+                </a>
+                <a href="#sell" class="bg-white hover:bg-gray-100 text-secondary font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-lg">
+                    Mashina sotish
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Bizning xizmatlarimiz</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Sizning avtomobil bilan bog'liq barcha ehtiyojlaringiz uchun bitta yechim.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div id="buy" class="bg-white rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 text-primary rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Sotib olish</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Keng tanlovdagi tekshirilgan va ishonchli avtomobillar. Yangi va haydalgan mashinalar ro'yxatini ko'rib chiqing va o'zingizga mosini tanlang.
+                    </p>
+                    <a href="#" class="text-primary font-semibold hover:text-blue-800 flex items-center gap-2">
+                        Batafsil ko'rish <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+
+                <div id="sell" class="bg-white rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Sotish</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Mashinangizni minglab salohiyatli xaridorlarga bepul e'lon qiling. Eng yaxshi narxda, tez va xavfsiz sotish imkoniyati.
+                    </p>
+                    <a href="#" class="text-green-600 font-semibold hover:text-green-800 flex items-center gap-2">
+                        E'lon berish <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+
+                <div id="service" class="bg-white rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition duration-300 border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">HOT</div>
+                    <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">24/7 Texnik xizmat</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Yo'lda qolib ketdingizmi? Xavotirga o'rin yo'q. Bizning ustalarimiz tun-u kun, istalgan joyga yetib borib, texnik yordam ko'rsatishadi.
+                    </p>
+                    <a href="#" class="text-red-600 font-semibold hover:text-red-800 flex items-center gap-2">
+                        Yordam chaqirish <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <span class="text-2xl font-extrabold text-white">Auto<span class="text-primary">24</span></span>
+                <p class="text-sm mt-2 text-gray-400">© 2026 Auto24. Barcha huquqlar himoyalangan.</p>
+            </div>
+            <div class="flex space-x-6 text-sm font-medium">
+                <a href="#" class="hover:text-white transition">Maxfiylik siyosati</a>
+                <a href="#" class="hover:text-white transition">Foydalanish shartlari</a>
+                <a href="#" class="hover:text-white transition">Aloqa</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
